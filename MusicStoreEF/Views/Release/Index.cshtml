@@ -9,12 +9,12 @@
 @foreach (var release in @Model)
 {
     <div class="row new-release">
-        <div class="col-md-4 col-xs-8">
+        <div class="col-md-4 release-cover">
             <a href="@Url.Action("Details", "Release", new {id = release.Id})">
                 <img src="@release.CoverUrl" class="img-responsive" />
             </a>
         </div>
-        <div class="col-md-4 col-xs-4">
+        <div class="col-md-4">
             <ul class="list-group">
                 @HtmlHelpers.ListItem("Name", release.Name)
                 @HtmlHelpers.ListItem("Artists", release.FormattedArtists)

@@ -56,3 +56,7 @@ span.value {
 th.table-header {
     text-transform: uppercase;
 }
+
+.release-cover {
+    padding-bottom: 20px;
+}
