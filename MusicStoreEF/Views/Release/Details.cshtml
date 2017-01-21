@@ -1,0 +1,49 @@
+﻿@model MusicStoreEF.Models.Release
+
+@{
+    ViewBag.Title = $"{Model.FormattedArtists} - {Model.Name}";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Model.CoverUrl" class="img-responsive" />
+    </div>
+    <div class="col-md-4">
+        <h2 class="category">@Model.Name</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Artists: @Model.FormattedArtists</li>
+            <li class="list-group-item">Release date: @Model.ReleaseDate.ToShortDateString()</li>
+            <li class="list-group-item">Label: @Model.Label.Name</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Artists</th>
+                <th>Genre</th>
+                <th>BPM</th>
+                <th>Key</th>
+                <th>Length</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var track in @Model.Tracks)
+            {
+                <tr>
+                    <td>@track.Number</td>
+                    <td>@track.Name</td>
+                    <td>@Model.FormattedArtists</td>
+                    <td>@track.Genre</td>
+                    <td>@track.BPM</td>
+                    <td>@track.Key</td>
+                    <td>@track.Length</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
