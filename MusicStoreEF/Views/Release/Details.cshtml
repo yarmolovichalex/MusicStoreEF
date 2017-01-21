@@ -9,11 +9,12 @@
         <img src="@Model.CoverUrl" class="img-responsive" />
     </div>
     <div class="col-md-4">
+        <h5 class="category">Release</h5>
         <h2 class="category">@Model.Name</h2>
         <ul class="list-group">
-            <li class="list-group-item">Artists: @Model.FormattedArtists</li>
-            <li class="list-group-item">Release date: @Model.ReleaseDate.ToShortDateString()</li>
-            <li class="list-group-item">Label: @Model.Label.Name</li>
+            @HtmlHelpers.ListItem("Artists", Model.FormattedArtists)
+            @HtmlHelpers.ListItem("Release Date", @Model.ReleaseDate.ToShortDateString())
+            @HtmlHelpers.ListItem("Label", Model.Label.Name)
         </ul>
     </div>
 </div>
@@ -24,17 +25,17 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Title</th>
-                    <th>Artists</th>
-                    <th>Genre</th>
-                    <th>BPM</th>
-                    <th>Key</th>
-                    <th>Length</th>
+                    <th class="table-header">Title</th>
+                    <th class="table-header">Artists</th>
+                    <th class="table-header">Genre</th>
+                    <th class="table-header">BPM</th>
+                    <th class="table-header">Key</th>
+                    <th class="table-header">Length</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var track in @Model.Tracks)
-            {
+                {
                     <tr>
                         <td>@track.Number</td>
                         <td>@track.Name</td>

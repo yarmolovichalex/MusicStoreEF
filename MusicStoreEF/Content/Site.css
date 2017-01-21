@@ -28,6 +28,11 @@ textarea {
     text-transform: uppercase;
 }
 
+.list-item-label {
+    text-transform: uppercase;
+    color: #8c8c8c
+}
+
 .navbar.navbar-inverse.navbar-fixed-top {
     background-color: #225378;
 }
@@ -42,4 +47,12 @@ textarea {
 
 .tracklist {
     padding-top: 10px;
+}
+
+span.value {
+    padding-left: 5px;
+}
+
+th.table-header {
+    text-transform: uppercase;
 }
