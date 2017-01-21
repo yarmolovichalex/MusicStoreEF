@@ -18,32 +18,34 @@
     </div>
 </div>
 
-<div class="row">
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Title</th>
-                <th>Artists</th>
-                <th>Genre</th>
-                <th>BPM</th>
-                <th>Key</th>
-                <th>Length</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var track in @Model.Tracks)
-            {
+<div class="tracklist">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@track.Number</td>
-                    <td>@track.Name</td>
-                    <td>@Model.FormattedArtists</td>
-                    <td>@track.Genre</td>
-                    <td>@track.BPM</td>
-                    <td>@track.Key</td>
-                    <td>@track.Length</td>
-            </tr>
-            }
-        </tbody>
-    </table>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Artists</th>
+                    <th>Genre</th>
+                    <th>BPM</th>
+                    <th>Key</th>
+                    <th>Length</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var track in @Model.Tracks)
+            {
+                    <tr>
+                        <td>@track.Number</td>
+                        <td>@track.Name</td>
+                        <td>@Model.FormattedArtists</td>
+                        <td>@track.Genre</td>
+                        <td>@track.BPM</td>
+                        <td>@track.Key</td>
+                        <td>@track.Length</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -9,12 +9,12 @@
 @foreach (var release in @Model)
 {
     <div class="row new-release">
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-8">
             <a href="@Url.Action("Details", "Release", new {id = release.Id})">
                 <img src="@release.CoverUrl" class="img-responsive" />
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-xs-4">
             <ul class="list-group">
                 <li class="list-group-item">Name: @release.Name</li>
                 <li class="list-group-item">Artist: @string.Join(", ", release.Artists.Select(x => x.Name))</li>
