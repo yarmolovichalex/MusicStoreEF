@@ -5,14 +5,14 @@ namespace MusicStoreEF.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MusicStoreEF.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MusicStoreEF.Models.MusicStoreDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MusicStoreEF.Models.ApplicationDbContext context)
+        protected override void Seed(MusicStoreEF.Models.MusicStoreDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

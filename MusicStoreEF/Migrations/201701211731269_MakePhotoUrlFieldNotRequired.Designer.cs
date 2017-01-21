@@ -7,13 +7,13 @@ namespace MusicStoreEF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CreateAlbumsTable : IMigrationMetadata
+    public sealed partial class MakePhotoUrlFieldNotRequired : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateAlbumsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MakePhotoUrlFieldNotRequired));
         
         string IMigrationMetadata.Id
         {
-            get { return "201701192119488_CreateAlbumsTable"; }
+            get { return "201701211731269_MakePhotoUrlFieldNotRequired"; }
         }
         
         string IMigrationMetadata.Source

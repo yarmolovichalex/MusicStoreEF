@@ -8,6 +8,59 @@ namespace MusicStoreEF.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Artists",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 500),
+                        PhotoUrl = c.String(nullable: false, maxLength: 2000),
+                        Description = c.String(nullable: false, maxLength: 2000),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Releases",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        Genre = c.String(nullable: false),
+                        ReleaseDate = c.DateTime(nullable: false),
+                        CoverUrl = c.String(),
+                        LabelId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Labels", t => t.LabelId, cascadeDelete: true)
+                .Index(t => t.LabelId);
+            
+            CreateTable(
+                "dbo.Labels",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        CoverUrl = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Tracks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Number = c.Int(nullable: false),
+                        Name = c.String(nullable: false),
+                        Length = c.Int(nullable: false),
+                        Genre = c.String(nullable: false),
+                        BPM = c.Int(),
+                        Key = c.String(),
+                        ReleaseId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Releases", t => t.ReleaseId, cascadeDelete: true)
+                .Index(t => t.ReleaseId);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -75,6 +128,19 @@ namespace MusicStoreEF.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
+            CreateTable(
+                "dbo.ArtistReleases",
+                c => new
+                    {
+                        ArtistId = c.Int(nullable: false),
+                        ReleaseId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.ArtistId, t.ReleaseId })
+                .ForeignKey("dbo.Artists", t => t.ArtistId, cascadeDelete: true)
+                .ForeignKey("dbo.Releases", t => t.ReleaseId, cascadeDelete: true)
+                .Index(t => t.ArtistId)
+                .Index(t => t.ReleaseId);
+            
         }
         
         public override void Down()
@@ -83,17 +149,30 @@ namespace MusicStoreEF.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.ArtistReleases", "ReleaseId", "dbo.Releases");
+            DropForeignKey("dbo.ArtistReleases", "ArtistId", "dbo.Artists");
+            DropForeignKey("dbo.Tracks", "ReleaseId", "dbo.Releases");
+            DropForeignKey("dbo.Releases", "LabelId", "dbo.Labels");
+            DropIndex("dbo.ArtistReleases", new[] { "ReleaseId" });
+            DropIndex("dbo.ArtistReleases", new[] { "ArtistId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Tracks", new[] { "ReleaseId" });
+            DropIndex("dbo.Releases", new[] { "LabelId" });
+            DropTable("dbo.ArtistReleases");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Tracks");
+            DropTable("dbo.Labels");
+            DropTable("dbo.Releases");
+            DropTable("dbo.Artists");
         }
     }
 }

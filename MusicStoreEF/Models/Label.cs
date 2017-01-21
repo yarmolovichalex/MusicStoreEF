@@ -2,14 +2,11 @@
 
 namespace MusicStoreEF.Models
 {
-    public class Album
+    public class Label
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Year { get; set; }
-        public Artist Artist { get; set; }
-        public int ArtistId { get; set; }
         public string CoverUrl { get; set; }
-        public ICollection<Track> Tracks { get; set; }
+        public ICollection<Release> Releases { get; set; }
     }
 }

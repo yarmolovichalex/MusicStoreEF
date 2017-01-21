@@ -7,13 +7,13 @@ namespace MusicStoreEF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddNumberFieldToTracksTable : IMigrationMetadata
+    public sealed partial class InitialMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNumberFieldToTracksTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201701192215573_AddNumberFieldToTracksTable"; }
+            get { return "201701211513028_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

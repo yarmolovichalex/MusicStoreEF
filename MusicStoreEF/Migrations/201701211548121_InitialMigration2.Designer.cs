@@ -7,13 +7,13 @@ namespace MusicStoreEF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CreateArtistsTable : IMigrationMetadata
+    public sealed partial class InitialMigration2 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateArtistsTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration2));
         
         string IMigrationMetadata.Id
         {
-            get { return "201701191824511_CreateArtistsTable"; }
+            get { return "201701211548121_InitialMigration2"; }
         }
         
         string IMigrationMetadata.Source

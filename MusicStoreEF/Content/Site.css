@@ -23,3 +23,19 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.category {
+    text-transform: uppercase;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: #225378;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top a:hover {
+    color: #ACF0F2;
+}
+
+.new-release {
+    padding-top: 20px;
+}

@@ -24,7 +24,7 @@ namespace MusicStoreEF
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.flatly.css",
+                      "~/Content/bootstrap.darkly.css",
                       "~/Content/site.css"));
         }
     }
