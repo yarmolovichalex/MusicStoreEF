@@ -117,6 +117,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/14788499.jpg",
                 Genre = techHouse,
                 Label = relief,
+                Price = 5.97m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -139,6 +140,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/15086682.jpg",
                 Genre = techHouse,
                 Label = repopulateMars,
+                Price = 3.99m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -179,6 +181,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/15040687.jpg",
                 Genre = techHouse,
                 Label = anjunadeep,
+                Price = 1.99m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -201,6 +204,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/14868687.jpg",
                 Genre = techno,
                 Label = drumcode,
+                Price = 5.97m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -241,6 +245,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/14738704.jpg",
                 Genre = techHouse,
                 Label = suara,
+                Price = 4.49m,
                 Tracks = new List<Track>
                 {
                     new Track

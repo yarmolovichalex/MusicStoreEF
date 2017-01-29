@@ -31,7 +31,8 @@ namespace MusicStoreEF.Controllers
                 Artists = string.Join(", ", r.Artists.Select(a => a.Name).OrderBy(a => a)),
                 ReleaseDate = r.ReleaseDate,
                 Genre = r.Genre.Name,
-                CoverUrl = r.CoverUrl
+                CoverUrl = r.CoverUrl,
+                Price = r.Price
             });
 
             return View(viewModel);

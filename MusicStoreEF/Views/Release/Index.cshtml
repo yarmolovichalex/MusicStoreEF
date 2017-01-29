@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MusicStoreEF.ViewModels.ReleaseViewModel>
+﻿@using System.Globalization
+@model IEnumerable<MusicStoreEF.ViewModels.ReleaseViewModel>
 
 @{
     ViewBag.Title = "Releases";
@@ -21,7 +22,12 @@
                 @HtmlHelpers.ListItem("Release date", release.ReleaseDate.ToShortDateString())
                 @HtmlHelpers.ListItem("Genre", release.Genre)
             </ul>
-            <button class="btn btn-default">Buy</button>
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default">
+                <span class="price">$@release.Price.ToString(CultureInfo.InvariantCulture)</span>
+            </button>
         </div>
         <div class="col-md-4"></div>
     </div>

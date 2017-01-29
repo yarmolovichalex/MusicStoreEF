@@ -10,6 +10,8 @@ namespace MusicStoreEF.Models
         public ICollection<Artist> Artists { get; set; }
         public DateTime ReleaseDate { get; set; }
         public string CoverUrl { get; set; }
+        public decimal Price { get; set; }
+
         public ICollection<Track> Tracks { get; set; }
 
         public Label Label { get; set; }

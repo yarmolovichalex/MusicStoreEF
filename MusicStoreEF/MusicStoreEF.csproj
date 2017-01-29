@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201701261249416_ChangeGenreToField.Designer.cs">
       <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701291124123_AddPriceToRelease.cs" />
+    <Compile Include="Migrations\201701291124123_AddPriceToRelease.Designer.cs">
+      <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Controllers\ReleaseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -295,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701261249416_ChangeGenreToField.resx">
       <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701291124123_AddPriceToRelease.resx">
+      <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
