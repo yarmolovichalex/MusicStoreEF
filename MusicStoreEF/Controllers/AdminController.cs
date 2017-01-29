@@ -1,8 +1,8 @@
-﻿using System;
+﻿using MusicStoreEF.Helpers;
+using MusicStoreEF.Models;
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using MusicStoreEF.Helpers;
-using MusicStoreEF.Models;
 
 namespace MusicStoreEF.Controllers
 {
@@ -106,13 +106,16 @@ namespace MusicStoreEF.Controllers
             var drumcode = new Label {Name = "Drumcode", CoverUrl = "https://geo-media.beatport.com/image/12006709.jpg"};
             var suara = new Label {Name = "Suara", CoverUrl = "https://geo-media.beatport.com/image/11107394.jpg" };
 
+            var techHouse = _context.Genres.Find(1);
+            var techno = _context.Genres.Find(2);
+
             var sheeple = new Release
             {
                 Name = "Sheeple",
                 Artists = new List<Artist> {greenVelvet, prokAndFitch},
                 ReleaseDate = new DateTime(2016, 11, 18),
                 CoverUrl = "https://geo-media.beatport.com/image/14788499.jpg",
-                Genre = Genres.TechHouse,
+                Genre = techHouse,
                 Label = relief,
                 Tracks = new List<Track>
                 {
@@ -123,7 +126,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 1),
                         BPM = 124,
                         Key = Keys.Amin,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     }
                 }
             };
@@ -134,7 +137,7 @@ namespace MusicStoreEF.Controllers
                 Artists = new List<Artist> {detlef, osseyJames},
                 ReleaseDate = new DateTime(2017, 1, 13),
                 CoverUrl = "https://geo-media.beatport.com/image/15086682.jpg",
-                Genre = Genres.TechHouse,
+                Genre = techHouse,
                 Label = repopulateMars,
                 Tracks = new List<Track>
                 {
@@ -145,7 +148,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 12),
                         BPM = 125,
                         Key = Keys.Bmaj,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     },
                     new Track
                     {
@@ -154,7 +157,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 23),
                         BPM = 124,
                         Key = Keys.Fsharpmin,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     },
                     new Track
                     {
@@ -163,7 +166,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 40),
                         BPM = 122,
                         Key = Keys.Cmin,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     }
                 }
             };
@@ -174,7 +177,7 @@ namespace MusicStoreEF.Controllers
                 Artists = new List<Artist> {patriceBaumel, cubicolor},
                 ReleaseDate = new DateTime(2017, 1, 13),
                 CoverUrl = "https://geo-media.beatport.com/image/15040687.jpg",
-                Genre = Genres.TechHouse,
+                Genre = techHouse,
                 Label = anjunadeep,
                 Tracks = new List<Track>
                 {
@@ -185,7 +188,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 23),
                         BPM = 122,
                         Key = Keys.Amaj,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     }
                 }
             };
@@ -196,7 +199,7 @@ namespace MusicStoreEF.Controllers
                 Artists = new List<Artist> {pigAndDan},
                 ReleaseDate = new DateTime(2016, 11, 28),
                 CoverUrl = "https://geo-media.beatport.com/image/14868687.jpg",
-                Genre = Genres.Techno,
+                Genre = techno,
                 Label = drumcode,
                 Tracks = new List<Track>
                 {
@@ -207,7 +210,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(8, 15),
                         BPM = 124,
                         Key = Keys.Bmin,
-                        Genre = Genres.Techno
+                        Genre = techno
                     },
                     new Track
                     {
@@ -216,7 +219,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 24),
                         BPM = 126,
                         Key = Keys.Amin,
-                        Genre = Genres.Techno
+                        Genre = techno
                     },
                     new Track
                     {
@@ -225,7 +228,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(8, 7),
                         BPM = 126,
                         Key = Keys.Amaj,
-                        Genre = Genres.Techno
+                        Genre = techno
                     }
                 }
             };
@@ -236,7 +239,7 @@ namespace MusicStoreEF.Controllers
                 Artists = new List<Artist> {dennisCruz},
                 ReleaseDate = new DateTime(2016, 10, 31),
                 CoverUrl = "https://geo-media.beatport.com/image/14738704.jpg",
-                Genre = Genres.TechHouse,
+                Genre = techHouse,
                 Label = suara,
                 Tracks = new List<Track>
                 {
@@ -247,7 +250,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 51),
                         BPM = 123,
                         Key = Keys.Amin,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     },
                     new Track
                     {
@@ -256,7 +259,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(9, 2),
                         BPM = 123,
                         Key = Keys.Emaj,
-                        Genre = Genres.Techno
+                        Genre = techno
                     },
                     new Track
                     {
@@ -265,7 +268,7 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 36),
                         BPM = 122,
                         Key = Keys.Gmin,
-                        Genre = Genres.TechHouse
+                        Genre = techHouse
                     }
                 }
             };
@@ -281,7 +284,6 @@ namespace MusicStoreEF.Controllers
                 Console.WriteLine(e);
                 throw;
             }
-
 
             return new EmptyResult();
         }

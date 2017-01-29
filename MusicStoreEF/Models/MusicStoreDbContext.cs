@@ -1,5 +1,5 @@
-using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace MusicStoreEF.Models
 {
@@ -9,6 +9,7 @@ namespace MusicStoreEF.Models
         public DbSet<Release> Releases { get; set; }
         public DbSet<Track> Tracks { get; set; }
         public DbSet<Label> Labels { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         public MusicStoreDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -44,7 +45,7 @@ namespace MusicStoreEF.Models
                 .Property(e => e.Name).IsRequired();
 
             modelBuilder.Entity<Release>()
-                .Property(e => e.Genre).IsRequired();
+                .Property(e => e.GenreId).IsRequired();
 
             modelBuilder.Entity<Label>()
                 .HasMany(e => e.Releases)
@@ -57,7 +58,20 @@ namespace MusicStoreEF.Models
                 .Property(e => e.Name).IsRequired();
 
             modelBuilder.Entity<Track>()
-                .Property(e => e.Genre).IsRequired();
+                .Property(e => e.GenreId).IsRequired();
+
+            modelBuilder.Entity<Genre>()
+                .Property(g => g.Name).IsRequired();
+
+            modelBuilder.Entity<Genre>()
+                .HasMany(g => g.Tracks)
+                .WithRequired(t => t.Genre)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Genre>()
+                .HasMany(g => g.Releases)
+                .WithRequired(t => t.Genre)
+                .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }

@@ -6,5 +6,10 @@
         {
             return minutes * 60 + seconds;
         }
+
+        public static string ToMinutesAndSeconds(this int number)
+        {
+            return number / 60 + ":" + number % 60;
+        }
     }
 }

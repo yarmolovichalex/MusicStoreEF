@@ -173,7 +173,15 @@
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
       <DependentUpon>201701211731269_MakePhotoUrlFieldNotRequired.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Genres.cs" />
+    <Compile Include="Migrations\201701261231526_AddGenresTable.cs" />
+    <Compile Include="Migrations\201701261231526_AddGenresTable.Designer.cs">
+      <DependentUpon>201701261231526_AddGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701261249416_ChangeGenreToField.cs" />
+    <Compile Include="Migrations\201701261249416_ChangeGenreToField.Designer.cs">
+      <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Controllers\ReleaseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -200,6 +208,9 @@
     <Compile Include="Models\Track.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ReleaseDetailsViewModel.cs" />
+    <Compile Include="ViewModels\ReleaseViewModel.cs" />
+    <Compile Include="ViewModels\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.darkly.css" />
@@ -260,7 +271,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -279,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.resx">
       <DependentUpon>201701211731269_MakePhotoUrlFieldNotRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701261231526_AddGenresTable.resx">
+      <DependentUpon>201701261231526_AddGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701261249416_ChangeGenreToField.resx">
+      <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

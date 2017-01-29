@@ -1,7 +1,8 @@
-﻿@model MusicStoreEF.Models.Release
+﻿@using MusicStoreEF.Helpers
+@model MusicStoreEF.ViewModels.ReleaseDetailsViewModel
 
 @{
-    ViewBag.Title = $"{Model.FormattedArtists} - {Model.Name}";
+    ViewBag.Title = $"{Model.Artists} - {Model.Name}";
 }
 
 <div class="row">
@@ -12,9 +13,9 @@
         <h5 class="category">Release</h5>
         <h2 class="category">@Model.Name</h2>
         <ul class="list-group">
-            @HtmlHelpers.ListItem("Artists", Model.FormattedArtists)
+            @HtmlHelpers.ListItem("Artists", Model.Artists)
             @HtmlHelpers.ListItem("Release Date", @Model.ReleaseDate.ToShortDateString())
-            @HtmlHelpers.ListItem("Label", Model.Label.Name)
+            @HtmlHelpers.ListItem("Label", Model.Label)
         </ul>
     </div>
 </div>
@@ -34,16 +35,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var track in @Model.Tracks)
+                @foreach (var track in Model.Tracks)
                 {
                     <tr>
                         <td>@track.Number</td>
                         <td>@track.Name</td>
-                        <td>@Model.FormattedArtists</td>
+                        <td>@Model.Artists</td>
                         <td>@track.Genre</td>
                         <td>@track.BPM</td>
                         <td>@track.Key</td>
-                        <td>@track.Length</td>
+                        <td>@track.Length.ToMinutesAndSeconds()</td>
                     </tr>
                 }
             </tbody>
