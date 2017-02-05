@@ -9,7 +9,7 @@
 
         public static string ToMinutesAndSeconds(this int number)
         {
-            return number / 60 + ":" + number % 60;
+            return number / 60 + ":" + (number % 60).ToString("00");
         }
     }
 }

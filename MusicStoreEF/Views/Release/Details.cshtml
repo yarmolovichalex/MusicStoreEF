@@ -5,7 +5,7 @@
     ViewBag.Title = $"{Model.Artists} - {Model.Name}";
 }
 
-<div class="row">
+<div class="row releaseInfo">
     <div class="col-md-4">
         <img src="@Model.CoverUrl" class="img-responsive" />
     </div>
@@ -26,19 +26,23 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th class="table-header">Title</th>
-                    <th class="table-header">Artists</th>
-                    <th class="table-header">Genre</th>
-                    <th class="table-header">BPM</th>
-                    <th class="table-header">Key</th>
-                    <th class="table-header">Length</th>
+                    <th>Title</th>
+                    <th>Artists</th>
+                    <th>Genre</th>
+                    <th>BPM</th>
+                    <th>Key</th>
+                    <th>Length</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var track in Model.Tracks)
                 {
                     <tr>
-                        <td>@track.Number</td>
+                        <td>
+                            <div class="trackNumber">
+                                @track.Number
+                            </div>
+                        </td>
                         <td>@track.Name</td>
                         <td>@Model.Artists</td>
                         <td>@track.Genre</td>

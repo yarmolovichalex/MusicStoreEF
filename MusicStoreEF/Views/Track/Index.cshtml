@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MusicStoreEF.Models.Track>
+
+@{
+    ViewBag.Title = "Tracks";
+}
+
+<h2 class="category">Tracks</h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Artists</th>
+                <th>Label</th>
+                <th>Genre</th>
+                <th>Key</th>
+                <th>Released</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var track in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Details", "Release", new { id = track.ReleaseId })">
+                            <img src="@track.Release.CoverUrl" class="img-responsive release-cover-tiny" />
+                        </a>
+                    </td>
+                    <td>@track.Name</td>
+                    <td>@string.Join(", ", track.Release.Artists.Select(a => a.Name))</td>
+                    <td>@track.Release.Label.Name</td>
+                    <td>@track.Genre.Name</td>
+                    <td>@track.Key</td>
+                    <td>@track.Release.ReleaseDate.ToShortDateString()</td>
+                    <td>$price todo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

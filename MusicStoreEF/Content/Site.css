@@ -53,10 +53,38 @@ span.value {
     padding-left: 5px;
 }
 
-th.table-header {
-    text-transform: uppercase;
-}
-
 .release-cover {
     padding-bottom: 20px;
+}
+
+.release-cover-tiny {
+    width: 35px;
+    height: 35px;
+}
+
+.table > tbody > tr {
+    background-color: #373737;
+    border-bottom: 2px solid #222222;
+    min-height: 20px;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+    font-size: 14px;
+    padding: 0;
+}
+
+.table > thead > tr > th {
+    text-transform: uppercase;
+    vertical-align: middle;
+    padding: 0 0 8px;
+}
+
+.trackNumber {
+    font-size: 22px;
+    padding-left: 8px;
+}
+
+.releaseInfo {
+    margin: 25px 0;
 }
