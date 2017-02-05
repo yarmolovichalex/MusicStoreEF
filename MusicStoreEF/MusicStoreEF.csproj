@@ -186,6 +186,10 @@
     <Compile Include="Migrations\201701291124123_AddPriceToRelease.Designer.cs">
       <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702052029235_AddPriceToTrackTable.cs" />
+    <Compile Include="Migrations\201702052029235_AddPriceToTrackTable.Designer.cs">
+      <DependentUpon>201702052029235_AddPriceToTrackTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Controllers\ReleaseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701291124123_AddPriceToRelease.resx">
       <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702052029235_AddPriceToTrackTable.resx">
+      <DependentUpon>201702052029235_AddPriceToTrackTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

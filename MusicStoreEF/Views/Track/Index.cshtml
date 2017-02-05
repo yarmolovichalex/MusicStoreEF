@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MusicStoreEF.Models.Track>
+﻿@using System.Globalization
+@model IEnumerable<MusicStoreEF.Models.Track>
 
 @{
     ViewBag.Title = "Tracks";
@@ -35,7 +36,7 @@
                     <td>@track.Genre.Name</td>
                     <td>@track.Key</td>
                     <td>@track.Release.ReleaseDate.ToShortDateString()</td>
-                    <td>$price todo</td>
+                    <td>$@track.Price.ToString(CultureInfo.InvariantCulture)</td>
                 </tr>
             }
         </tbody>

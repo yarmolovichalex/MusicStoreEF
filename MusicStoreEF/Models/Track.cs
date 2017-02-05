@@ -8,6 +8,7 @@
         public int Length { get; set; }
         public int? BPM { get; set; }
         public string Key { get; set; }
+        public decimal Price { get; set; }
 
         public Release Release { get; set; }
         public int ReleaseId { get; set; }

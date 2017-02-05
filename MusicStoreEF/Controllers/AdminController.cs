@@ -117,7 +117,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/14788499.jpg",
                 Genre = techHouse,
                 Label = relief,
-                Price = 5.97m,
+                Price = 2.97m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -127,7 +127,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 1),
                         BPM = 124,
                         Key = Keys.Amin,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 2.97m
                     }
                 }
             };
@@ -140,7 +141,7 @@ namespace MusicStoreEF.Controllers
                 CoverUrl = "https://geo-media.beatport.com/image/15086682.jpg",
                 Genre = techHouse,
                 Label = repopulateMars,
-                Price = 3.99m,
+                Price = 5.97m,
                 Tracks = new List<Track>
                 {
                     new Track
@@ -150,7 +151,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 12),
                         BPM = 125,
                         Key = Keys.Bmaj,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.99m
                     },
                     new Track
                     {
@@ -159,7 +161,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 23),
                         BPM = 124,
                         Key = Keys.Fsharpmin,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.99m
                     },
                     new Track
                     {
@@ -168,7 +171,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 40),
                         BPM = 122,
                         Key = Keys.Cmin,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.99m
                     }
                 }
             };
@@ -191,7 +195,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 23),
                         BPM = 122,
                         Key = Keys.Amaj,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.99m
                     }
                 }
             };
@@ -214,7 +219,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(8, 15),
                         BPM = 124,
                         Key = Keys.Bmin,
-                        Genre = techno
+                        Genre = techno,
+                        Price = 1.99m
                     },
                     new Track
                     {
@@ -223,7 +229,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(7, 24),
                         BPM = 126,
                         Key = Keys.Amin,
-                        Genre = techno
+                        Genre = techno,
+                        Price = 1.99m
                     },
                     new Track
                     {
@@ -232,7 +239,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(8, 7),
                         BPM = 126,
                         Key = Keys.Amaj,
-                        Genre = techno
+                        Genre = techno,
+                        Price = 1.99m
                     }
                 }
             };
@@ -255,7 +263,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 51),
                         BPM = 123,
                         Key = Keys.Amin,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.49m
                     },
                     new Track
                     {
@@ -264,7 +273,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(9, 2),
                         BPM = 123,
                         Key = Keys.Emaj,
-                        Genre = techno
+                        Genre = techno,
+                        Price = 1.49m
                     },
                     new Track
                     {
@@ -273,7 +283,8 @@ namespace MusicStoreEF.Controllers
                         Length = DateHelper.GetSeconds(6, 36),
                         BPM = 122,
                         Key = Keys.Gmin,
-                        Genre = techHouse
+                        Genre = techHouse,
+                        Price = 1.49m
                     }
                 }
             };
