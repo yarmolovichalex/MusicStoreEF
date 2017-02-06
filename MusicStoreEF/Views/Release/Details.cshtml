@@ -10,8 +10,8 @@
         <img src="@Model.CoverUrl" class="img-responsive" />
     </div>
     <div class="col-md-4">
-        <h5 class="category">Release</h5>
-        <h2 class="category">@Model.Name</h2>
+        <h5>Release</h5>
+        <h2>@Model.Name</h2>
         <ul class="list-group">
             @HtmlHelpers.ListItem("Artists", Model.Artists.ToCommaSeparatedLinks(Request.RequestContext))
             @HtmlHelpers.ListItem("Release Date", new MvcHtmlString(Model.ReleaseDate.ToShortDateString()))
