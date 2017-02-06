@@ -31,7 +31,13 @@
                         </a>
                     </td>
                     <td>@track.Name</td>
-                    <td>@string.Join(", ", track.Release.Artists.Select(a => a.Name))</td>
+                    <td>
+                        @foreach (var artist in track.Release.Artists)
+                        {
+                            <a href="@Url.Action("Index", "Artist", new {id = artist.Id})">@artist.Name </a>
+                        }
+                        @*todo commas*@
+                    </td>
                     <td>@track.Release.Label.Name</td>
                     <td>@track.Genre.Name</td>
                     <td>@track.Key</td>

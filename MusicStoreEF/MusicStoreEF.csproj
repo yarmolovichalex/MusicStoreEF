@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
@@ -278,6 +279,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Track\Index.cshtml" />
+    <Content Include="Views\Artist\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
