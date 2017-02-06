@@ -71,13 +71,17 @@ span.value {
 .table > tbody > tr > td {
     vertical-align: middle;
     font-size: 14px;
-    padding: 0;
+    padding: 0 8px 0; 
+}
+
+.table > tbody > tr > td.release-cover-container {
+    padding: 0; 
 }
 
 .table > thead > tr > th {
     text-transform: uppercase;
     vertical-align: middle;
-    padding: 0 0 8px;
+    padding: 0 8px 8px;
 }
 
 .trackNumber {
@@ -87,4 +91,38 @@ span.value {
 
 .releaseInfo {
     margin: 25px 0;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+}
+
+table a:not(.btn), .table a:not(.btn) {
+    color: #fff;
+    text-decoration: none;
+}
+
+table a:not(.btn), .table a:not(.btn):focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+table a:not(.btn), .table a:not(.btn):hover {
+    color: #ACF0F2;
+    text-decoration: underline;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ACF0F2;
+    text-decoration: underline;
 }

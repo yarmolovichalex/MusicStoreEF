@@ -1,4 +1,5 @@
-﻿@helper ListItem(string label, string value)
+﻿@using System.Web.Mvc
+@helper ListItem(string label, MvcHtmlString value)
 {
     <li class="list-group-item">
         <span class="list-item-label">@label</span>

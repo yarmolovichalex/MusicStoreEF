@@ -28,7 +28,7 @@ namespace MusicStoreEF.Controllers
             {
                 Id = r.Id,
                 Name = r.Name,
-                Artists = string.Join(", ", r.Artists.Select(a => a.Name).OrderBy(a => a)),
+                Artists = r.Artists,
                 ReleaseDate = r.ReleaseDate,
                 Genre = r.Genre.Name,
                 CoverUrl = r.CoverUrl,
@@ -50,7 +50,7 @@ namespace MusicStoreEF.Controllers
             var viewModel = new ReleaseDetailsViewModel
             {
                 Name = release.Name,
-                Artists = string.Join(", ", release.Artists.Select(a => a.Name).OrderBy(a => a)),
+                Artists = release.Artists,
                 CoverUrl = release.CoverUrl,
                 Label = release.Label.Name,
                 ReleaseDate = release.ReleaseDate,

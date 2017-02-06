@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
+    <Compile Include="Helpers\HtmlHelper.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
       <DependentUpon>201701211731269_MakePhotoUrlFieldNotRequired.cs</DependentUpon>

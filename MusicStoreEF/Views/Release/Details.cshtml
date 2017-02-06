@@ -13,9 +13,9 @@
         <h5 class="category">Release</h5>
         <h2 class="category">@Model.Name</h2>
         <ul class="list-group">
-            @HtmlHelpers.ListItem("Artists", Model.Artists)
-            @HtmlHelpers.ListItem("Release Date", @Model.ReleaseDate.ToShortDateString())
-            @HtmlHelpers.ListItem("Label", Model.Label)
+            @HtmlHelpers.ListItem("Artists", Model.Artists.ToCommaSeparatedLinks(Request.RequestContext))
+            @HtmlHelpers.ListItem("Release Date", new MvcHtmlString(Model.ReleaseDate.ToShortDateString()))
+            @HtmlHelpers.ListItem("Label", new MvcHtmlString(Model.Label))
         </ul>
     </div>
 </div>
@@ -44,7 +44,7 @@
                             </div>
                         </td>
                         <td>@track.Name</td>
-                        <td>@Model.Artists</td>
+                        <td>@Model.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
                         <td>@track.Genre</td>
                         <td>@track.BPM</td>
                         <td>@track.Key</td>

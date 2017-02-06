@@ -1,4 +1,5 @@
 ﻿@using System.Globalization
+@using MusicStoreEF.Helpers
 @model IEnumerable<MusicStoreEF.Models.Track>
 
 @{
@@ -25,19 +26,13 @@
             @foreach (var track in Model)
             {
                 <tr>
-                    <td>
+                    <td class="release-cover-container">
                         <a href="@Url.Action("Details", "Release", new { id = track.ReleaseId })">
-                            <img src="@track.Release.CoverUrl" class="img-responsive release-cover-tiny" />
+                            <img src="@track.Release.CoverUrl" class="release-cover-tiny" />
                         </a>
                     </td>
                     <td>@track.Name</td>
-                    <td>
-                        @foreach (var artist in track.Release.Artists)
-                        {
-                            <a href="@Url.Action("Index", "Artist", new {id = artist.Id})">@artist.Name </a>
-                        }
-                        @*todo commas*@
-                    </td>
+                    <td>@track.Release.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
                     <td>@track.Release.Label.Name</td>
                     <td>@track.Genre.Name</td>
                     <td>@track.Key</td>
