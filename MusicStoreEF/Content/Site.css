@@ -24,6 +24,15 @@ textarea {
     max-width: 280px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+}
+
 .category {
     text-transform: uppercase;
 }
@@ -125,4 +134,8 @@ a:focus {
 a:hover {
     color: #ACF0F2;
     text-decoration: underline;
+}
+
+img.artistPhoto {
+    max-height: 250px;
 }

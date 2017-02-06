@@ -1,0 +1,26 @@
+﻿@using System.Globalization
+@using MusicStoreEF.Helpers
+@model MusicStoreEF.Models.Release
+    
+<div class="row new-release">
+    <div class="col-md-4 release-cover">
+        <a href="@Url.Action("Details", "Release", new {id = Model.Id})">
+            <img src="@Model.CoverUrl" class="img-responsive" />
+        </a>
+    </div>
+    <div class="col-md-4">
+        <ul class="list-group">
+            @HtmlHelpers.ListItem("Name", new MvcHtmlString(Model.Name))
+            @HtmlHelpers.ListItem("Artists", Model.Artists.ToCommaSeparatedLinks(Request.RequestContext))
+            @HtmlHelpers.ListItem("Release date", new MvcHtmlString(Model.ReleaseDate.ToShortDateString()))
+            @HtmlHelpers.ListItem("Genre", new MvcHtmlString(Model.Genre.Name))
+        </ul>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="price">$@Model.Price.ToString(CultureInfo.InvariantCulture)</span>
+        </button>
+    </div>
+    <div class="col-md-4"></div>
+</div>
