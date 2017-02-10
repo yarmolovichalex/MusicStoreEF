@@ -1,0 +1,26 @@
+﻿@model MusicStoreEF.Models.Label
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="label-top-section">
+    <a href="@Url.Action("Index", new {id = Model.Id})">
+        <img src="@Model.CoverUrl" class="label-logo" />
+    </a>
+    <div style="display: block">
+        <h2 class="label-name">@Model.Name</h2>
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="#">Featured</a></li>
+            <li role="presentation"><a href="#">Releases</a></li>
+            <li role="presentation"><a href="#">Tracks</a></li>
+        </ul>
+    </div>
+</div>
+
+<h3>Latest releases</h3>
+
+@foreach (var release in Model.Releases)
+{
+    Html.RenderPartial("_Release", release);
+}

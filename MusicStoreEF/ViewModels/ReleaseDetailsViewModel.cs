@@ -9,7 +9,7 @@ namespace MusicStoreEF.ViewModels
         public string Name { get; set; }
         public ICollection<Artist> Artists { get; set; }
         public DateTime ReleaseDate { get; set; }
-        public string Label { get; set; }
+        public Label Label { get; set; }
         public string CoverUrl { get; set; }
         public IEnumerable<TrackViewModel> Tracks { get; set; }
     }

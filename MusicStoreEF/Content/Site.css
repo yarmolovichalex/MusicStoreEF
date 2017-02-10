@@ -58,8 +58,9 @@ span.value {
     padding-left: 5px;
 }
 
-.release-cover {
-    padding-bottom: 20px;
+img.release-cover {
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .release-cover-tiny {
@@ -98,8 +99,21 @@ span.value {
     margin: 25px 0;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
     color: #fff;
+}
+
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    background-color: #225378;
 }
 
 table a:not(.btn), .table a:not(.btn) {
@@ -132,6 +146,26 @@ a:hover {
     text-decoration: underline;
 }
 
-img.artistPhoto {
+img.artist-photo {
     max-height: 250px;
+}
+
+.category {
+    margin: 0;
+    color: #8c8c8c;
+}
+
+img.label-logo {
+    max-height: 75px;
+    margin-right: 20px;
+}
+
+.label-top-section {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.label-name {
+    margin: 0;
 }

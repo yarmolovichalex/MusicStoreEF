@@ -52,7 +52,7 @@ namespace MusicStoreEF.Controllers
                 Name = release.Name,
                 Artists = release.Artists,
                 CoverUrl = release.CoverUrl,
-                Label = release.Label.Name,
+                Label = release.Label,
                 ReleaseDate = release.ReleaseDate,
                 Tracks = release.Tracks.Select(t => new TrackViewModel
                 {

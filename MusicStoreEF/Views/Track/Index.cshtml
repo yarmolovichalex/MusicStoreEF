@@ -33,7 +33,11 @@
                     </td>
                     <td>@track.Name</td>
                     <td>@track.Release.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
-                    <td>@track.Release.Label.Name</td>
+                    <td>
+                        <a href="@Url.Action("Index", "Label", new {id = track.Release.Label.Id})">
+                            @track.Release.Label.Name
+                        </a>
+                    </td>
                     <td>@track.Genre.Name</td>
                     <td>@track.Key</td>
                     <td>@track.Release.ReleaseDate.ToShortDateString()</td>
