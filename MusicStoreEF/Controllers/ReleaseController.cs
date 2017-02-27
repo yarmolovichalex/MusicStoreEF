@@ -1,6 +1,5 @@
-﻿using MusicStoreEF.Models;
+﻿using MusicStoreEF.Repositories;
 using MusicStoreEF.ViewModels;
-using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -8,61 +7,34 @@ namespace MusicStoreEF.Controllers
 {
     public class ReleaseController : Controller
     {
-        private readonly IDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ReleaseController(IDbContext context)
+        public ReleaseController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public ActionResult Index()
         {
-            var latestReleases = _context.Releases
-                .Include(r => r.Artists)
-                .Include(r => r.Genre)
-                .OrderByDescending(r => r.ReleaseDate)
-                .Take(10)
-                .ToList();
+            var latestReleases = _unitOfWork.Releases.GetLatestReleases();
 
-            var viewModel = latestReleases.Select(r => new ReleaseViewModel
-            {
-                Id = r.Id,
-                Name = r.Name,
-                Artists = r.Artists,
-                ReleaseDate = r.ReleaseDate,
-                Genre = r.Genre.Name,
-                CoverUrl = r.CoverUrl,
-                Price = r.Price
-            });
+            var viewModel = latestReleases.Select(r => r.ToReleaseVm());
 
             return View(viewModel);
         }
 
         public ActionResult Details(int id)
         {
-            var release = _context.Releases
-                .Include(r => r.Artists)
-                .Include(r => r.Tracks.Select(t => t.Genre))
-                .Include(r => r.Label)
-                .Include(r => r.Genre)
-                .Single(r => r.Id == id);
+            var release = _unitOfWork.Releases.GetById(id);
 
-            var viewModel = new ReleaseDetailsViewModel
+            var viewModel = new ReleaseDetailsVm
             {
                 Name = release.Name,
-                Artists = release.Artists,
+                Artists = release.Artists.ToArtistVms().ToList(),
                 CoverUrl = release.CoverUrl,
                 Label = release.Label,
                 ReleaseDate = release.ReleaseDate,
-                Tracks = release.Tracks.Select(t => new TrackViewModel
-                {
-                    Number = t.Number,
-                    Name = t.Name,
-                    Genre = t.Genre.Name,
-                    BPM = t.BPM,
-                    Key = t.Key,
-                    Length = t.Length
-                })
+                Tracks = release.Tracks.ToTrackVms()
             };
 
             return View(viewModel);

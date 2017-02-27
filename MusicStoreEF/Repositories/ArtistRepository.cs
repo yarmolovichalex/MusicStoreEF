@@ -13,11 +13,16 @@ namespace MusicStoreEF.Repositories
             _context = context;
         }
 
-        public Artist GetArtistWithReleases(int id)
+        public Artist GetById(int id)
         {
             return _context.Artists
                 .Include(a => a.Releases.Select(r => r.Genre))
                 .SingleOrDefault(a => a.Id == id);
+        }
+
+        public void RemoveAll()
+        {
+            _context.Artists.RemoveRange(_context.Artists);
         }
     }
 }

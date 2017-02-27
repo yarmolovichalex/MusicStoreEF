@@ -1,5 +1,6 @@
 ﻿using MusicStoreEF.Helpers;
 using MusicStoreEF.Models;
+using MusicStoreEF.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -8,13 +9,12 @@ namespace MusicStoreEF.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly IDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public AdminController(IDbContext context)
+        public AdminController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
-
 
         // GET: Admin
         //public EmptyResult PopulateDb()
@@ -107,8 +107,8 @@ namespace MusicStoreEF.Controllers
             var drumcode = new Label {Name = "Drumcode", CoverUrl = "https://geo-media.beatport.com/image/12006709.jpg"};
             var suara = new Label {Name = "Suara", CoverUrl = "https://geo-media.beatport.com/image/11107394.jpg" };
 
-            var techHouse = _context.Genres.Find(1);
-            var techno = _context.Genres.Find(2);
+            var techHouse = _unitOfWork.Genres.GetById(1);
+            var techno = _unitOfWork.Genres.GetById(2);
 
             var sheeple = new Release
             {
@@ -290,11 +290,11 @@ namespace MusicStoreEF.Controllers
                 }
             };
 
-            _context.Releases.AddRange(new List<Release> { sheeple, swagonEp, deadEndThrills, chemistry, everybodyEp });
+            _unitOfWork.Releases.Add(new List<Release> { sheeple, swagonEp, deadEndThrills, chemistry, everybodyEp });
 
             try
             {
-                _context.SaveChanges();
+                _unitOfWork.Complete();
             }
             catch (Exception e)
             {
@@ -307,10 +307,11 @@ namespace MusicStoreEF.Controllers
 
         public EmptyResult CleanDb()
         {
-            _context.Artists.RemoveRange(_context.Artists);
-            _context.Releases.RemoveRange(_context.Releases);
-            _context.Labels.RemoveRange(_context.Labels);
-            _context.SaveChanges();
+            _unitOfWork.Artists.RemoveAll();
+            _unitOfWork.Releases.RemoveAll();
+            _unitOfWork.Labels.RemoveAll();
+
+            _unitOfWork.Complete();
 
             return new EmptyResult();
         }

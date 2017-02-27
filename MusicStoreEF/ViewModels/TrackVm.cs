@@ -1,6 +1,6 @@
 ﻿namespace MusicStoreEF.ViewModels
 {
-    public class TrackViewModel
+    public class TrackVm
     {
         public int Number { get; set; }
         public string Name { get; set; }

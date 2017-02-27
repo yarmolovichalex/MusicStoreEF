@@ -2,9 +2,9 @@
 
 namespace MusicStoreEF.Repositories
 {
-    public interface IArtistRepository
+    public interface ILabelRepository
     {
-        Artist GetById(int id);
+        Label GetById(int labelId);
         void RemoveAll();
     }
 }

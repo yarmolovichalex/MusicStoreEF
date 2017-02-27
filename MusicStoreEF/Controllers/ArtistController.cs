@@ -1,25 +1,35 @@
 ﻿using MusicStoreEF.Repositories;
+using MusicStoreEF.ViewModels;
 using System.Web.Mvc;
 
 namespace MusicStoreEF.Controllers
 {
     public class ArtistController : Controller
     {
-        private readonly IArtistRepository _artistRepository;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public ArtistController(IArtistRepository artistRepository)
+        public ArtistController(IUnitOfWork unitOfWork)
         {
-            _artistRepository = artistRepository;
+            _unitOfWork = unitOfWork;
         }
 
         public ActionResult Index(int id)
         {
-            var artist = _artistRepository.GetArtistWithReleases(id);
+            var artist = _unitOfWork.Artists.GetById(id);
 
             if (artist == null)
                 return HttpNotFound();
-            
-            return View(artist);
+
+            var viewModel = new ArtistDetailsVm
+            {
+                Id = artist.Id,
+                Name = artist.Name,
+                PhotoUrl = artist.PhotoUrl,
+                Description = artist.Description,
+                Releases = artist.Releases.ToReleaseVms()
+            };
+
+            return View(viewModel);
         }
     }
 }

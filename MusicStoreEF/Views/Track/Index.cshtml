@@ -1,6 +1,6 @@
 ﻿@using System.Globalization
 @using MusicStoreEF.Helpers
-@model IEnumerable<MusicStoreEF.Models.Track>
+@model IEnumerable<MusicStoreEF.ViewModels.TrackDetailsVm>
 
 @{
     ViewBag.Title = "Tracks";
@@ -28,18 +28,18 @@
                 <tr>
                     <td class="release-cover-container">
                         <a href="@Url.Action("Details", "Release", new { id = track.ReleaseId })">
-                            <img src="@track.Release.CoverUrl" class="release-cover-tiny" />
+                            <img src="@track.ReleaseCoverUrl" class="release-cover-tiny" />
                         </a>
                     </td>
                     <td>@track.Name</td>
-                    <td>@track.Release.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
-                    <td><a href="@Url.Action("Index", "Label", new {id = track.Release.Label.Id})">
-                            @track.Release.Label.Name
+                    <td>@track.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
+                    <td><a href="@Url.Action("Index", "Label", new {id = track.Label.Id})">
+                            @track.Label.Name
                         </a>
                     </td>
-                    <td>@track.Genre.Name</td>
+                    <td>@track.Genre</td>
                     <td>@track.Key</td>
-                    <td>@track.Release.ReleaseDate.ToShortDateString()</td>
+                    <td>@track.ReleaseDate.ToShortDateString()</td>
                     <td>$@track.Price.ToString(CultureInfo.InvariantCulture)</td>
                 </tr>
             }

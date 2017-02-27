@@ -1,4 +1,4 @@
-﻿using MusicStoreEF.Models;
+﻿using MusicStoreEF.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ namespace MusicStoreEF.Helpers
 {
     public static class HtmlHelper
     {
-        public static MvcHtmlString ToCommaSeparatedLinks(this ICollection<Artist> artists, RequestContext requestContext)
+        public static MvcHtmlString ToCommaSeparatedLinks(this ICollection<ArtistVm> artists, RequestContext requestContext)
         {
             var urlHelper = new UrlHelper(requestContext);
             var sb = new StringBuilder();

@@ -1,5 +1,5 @@
 ﻿@using MusicStoreEF.Helpers
-@model MusicStoreEF.ViewModels.ReleaseDetailsViewModel
+@model MusicStoreEF.ViewModels.ReleaseDetailsVm
 
 @{
     ViewBag.Title = $"{string.Join(", ", Model.Artists.Select(a => a.Name))} - {Model.Name}";

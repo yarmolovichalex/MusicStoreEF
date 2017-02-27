@@ -1,38 +1,33 @@
-﻿using MusicStoreEF.Models;
+﻿using MusicStoreEF.Repositories;
 using MusicStoreEF.ViewModels;
-using System.Data.Entity;
-using System.Linq;
 using System.Web.Mvc;
 
 namespace MusicStoreEF.Controllers
 {
     public class GenreController : Controller
     {
-        private readonly IDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public GenreController(IDbContext context)
+        public GenreController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         public PartialViewResult GetGenres()
         {
-            var model = _context.Genres.ToList();
+            var model = _unitOfWork.Genres.GetAll();
             return PartialView("_Genres", model);
         }
 
         public ActionResult Index(byte genreId)
         {
-            var genre = _context.Genres.Single(g => g.Id == genreId);
-            var releases = _context.Releases
-                .Include(r => r.Artists)
-                .Where(r => r.GenreId == genreId)
-                .ToList();
+            var genre = _unitOfWork.Genres.GetById(genreId);
+            var releases = _unitOfWork.Releases.GetByGenre(genreId);
 
-            var model = new GenreViewModel
+            var model = new GenreVm
             {
                 Genre = genre.Name,
-                Releases = releases
+                Releases = releases.ToReleaseVms()
             };
 
             return View(model);

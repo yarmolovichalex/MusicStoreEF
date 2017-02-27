@@ -1,6 +1,6 @@
 ﻿@using System.Globalization
 @using MusicStoreEF.Helpers
-@model MusicStoreEF.Models.Release
+@model MusicStoreEF.ViewModels.ReleaseVm
     
 <div class="row new-release">
     <div class="col-md-4 release-cover">
@@ -13,7 +13,7 @@
             @HtmlHelpers.ListItem("Name", new MvcHtmlString(Model.Name))
             @HtmlHelpers.ListItem("Artists", Model.Artists.ToCommaSeparatedLinks(Request.RequestContext))
             @HtmlHelpers.ListItem("Release date", new MvcHtmlString(Model.ReleaseDate.ToShortDateString()))
-            @HtmlHelpers.ListItem("Genre", new MvcHtmlString(Model.Genre.Name))
+            @HtmlHelpers.ListItem("Genre", new MvcHtmlString(Model.Genre))
         </ul>
         <button type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
