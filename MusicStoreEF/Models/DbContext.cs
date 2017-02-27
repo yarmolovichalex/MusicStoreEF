@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace MusicStoreEF.Models
 {
-    public class MusicStoreDbContext : IdentityDbContext<ApplicationUser>
+    public class DbContext : IdentityDbContext<ApplicationUser>, IDbContext
     {
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Release> Releases { get; set; }
@@ -11,14 +11,14 @@ namespace MusicStoreEF.Models
         public DbSet<Label> Labels { get; set; }
         public DbSet<Genre> Genres { get; set; }
 
-        public MusicStoreDbContext()
+        public DbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static MusicStoreDbContext Create()
+        public static DbContext Create()
         {
-            return new MusicStoreDbContext();
+            return new DbContext();
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

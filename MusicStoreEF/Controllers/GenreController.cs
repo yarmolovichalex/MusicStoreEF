@@ -8,11 +8,11 @@ namespace MusicStoreEF.Controllers
 {
     public class GenreController : Controller
     {
-        private readonly MusicStoreDbContext _context;
+        private readonly IDbContext _context;
 
-        public GenreController()
+        public GenreController(IDbContext context)
         {
-            _context = new MusicStoreDbContext();
+            _context = context;
         }
 
         public PartialViewResult GetGenres()

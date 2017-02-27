@@ -4,14 +4,14 @@ namespace MusicStoreEF.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MusicStoreEF.Models.MusicStoreDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MusicStoreEF.Models.DbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(MusicStoreEF.Models.MusicStoreDbContext context)
+        protected override void Seed(MusicStoreEF.Models.DbContext context)
         {
             context.Genres.AddOrUpdate(new Genre
             {

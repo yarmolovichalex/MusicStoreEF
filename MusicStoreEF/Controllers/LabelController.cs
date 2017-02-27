@@ -7,11 +7,11 @@ namespace MusicStoreEF.Controllers
 {
     public class LabelController : Controller
     {
-        private readonly MusicStoreDbContext _context;
+        private readonly IDbContext _context;
 
-        public LabelController()
+        public LabelController(IDbContext context)
         {
-            _context = new MusicStoreDbContext();
+            _context = context;
         }
 
         public ActionResult Index(int id)

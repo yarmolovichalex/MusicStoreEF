@@ -8,12 +8,13 @@ namespace MusicStoreEF.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly MusicStoreDbContext _context;
+        private readonly IDbContext _context;
 
-        public AdminController()
+        public AdminController(IDbContext context)
         {
-            _context = new MusicStoreDbContext();
+            _context = context;
         }
+
 
         // GET: Admin
         //public EmptyResult PopulateDb()

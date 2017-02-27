@@ -8,11 +8,11 @@ namespace MusicStoreEF.Controllers
 {
     public class ReleaseController : Controller
     {
-        private readonly MusicStoreDbContext _context;
+        private readonly IDbContext _context;
 
-        public ReleaseController()
+        public ReleaseController(IDbContext context)
         {
-            _context = new MusicStoreDbContext();
+            _context = context;
         }
 
         public ActionResult Index()
