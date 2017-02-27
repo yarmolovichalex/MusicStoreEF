@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArtistController.cs" />
+    <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\LabelController.cs" />
     <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Helpers\HtmlHelper.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Models\MusicStoreDbContext.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\Identity.cs" />
+    <Compile Include="ViewModels\GenreViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\Release.cs" />
     <Compile Include="Models\Track.cs" />
@@ -233,6 +235,10 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Code\HtmlHelpers.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -284,14 +290,13 @@
     <Content Include="Views\Artist\Index.cshtml" />
     <Content Include="Views\Shared\_Release.cshtml" />
     <Content Include="Views\Label\Index.cshtml" />
+    <Content Include="Views\Genre\Index.cshtml" />
+    <Content Include="Views\Shared\_Genres.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

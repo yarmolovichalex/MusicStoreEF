@@ -169,3 +169,18 @@ img.label-logo {
 .label-name {
     margin: 0;
 }
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    width: 400px;
+}
+
+.dropdown .dropdown-menu > li > a {
+    padding: 15px 20px;
+    color: #fff;
+}
+
+.dropdown .dropdown-menu > li > a:hover, 
+.dropdown .dropdown-menu > li > a:focus {
+    background-color: #225378;
+}

@@ -33,8 +33,7 @@
                     </td>
                     <td>@track.Name</td>
                     <td>@track.Release.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>
-                    <td>
-                        <a href="@Url.Action("Index", "Label", new {id = track.Release.Label.Id})">
+                    <td><a href="@Url.Action("Index", "Label", new {id = track.Release.Label.Id})">
                             @track.Release.Label.Name
                         </a>
                     </td>

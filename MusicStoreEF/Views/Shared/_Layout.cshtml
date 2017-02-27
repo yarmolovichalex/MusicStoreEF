@@ -21,6 +21,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#">Genres <span class="glyphicon glyphicon-triangle-bottom" style="font-size: 10px"></span></a>
+                        @Html.Action("GetGenres", "Genre")
+                    </li>
                     <li>@Html.ActionLink("Releases", "Index", "Release")</li>
                     <li>@Html.ActionLink("Tracks", "Index", "Track")</li>
                 </ul>

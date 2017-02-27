@@ -1,0 +1,8 @@
+﻿@model IEnumerable<MusicStoreEF.Models.Genre>
+    
+<ul class="dropdown-menu">
+    @foreach (var genre in Model)
+    {
+        <li>@Html.ActionLink(genre.Name, "Index", "Genre", new {genreId = genre.Id}, null)</li>
+    }
+</ul>

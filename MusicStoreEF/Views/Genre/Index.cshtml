@@ -1,0 +1,12 @@
+﻿@model MusicStoreEF.ViewModels.GenreViewModel
+
+@{
+    ViewBag.Title = Model.Genre;
+}
+
+<h2>@Model.Genre</h2>
+
+@foreach (var release in Model.Releases)
+{
+    Html.RenderPartial("_Release", release);
+}
