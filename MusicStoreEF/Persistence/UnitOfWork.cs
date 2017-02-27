@@ -1,6 +1,8 @@
-﻿using MusicStoreEF.Models;
+﻿using MusicStoreEF.Core;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Core.Repositories;
 
-namespace MusicStoreEF.Repositories
+namespace MusicStoreEF.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -1,7 +1,7 @@
-﻿using MusicStoreEF.Repositories;
-using MusicStoreEF.ViewModels;
+﻿using MusicStoreEF.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
+using MusicStoreEF.Core;
 
 namespace MusicStoreEF.Controllers
 {

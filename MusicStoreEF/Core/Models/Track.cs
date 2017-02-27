@@ -1,4 +1,4 @@
-﻿namespace MusicStoreEF.Models
+﻿namespace MusicStoreEF.Core.Models
 {
     public class Track
     {

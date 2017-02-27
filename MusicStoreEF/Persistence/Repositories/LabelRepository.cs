@@ -1,8 +1,10 @@
-﻿using MusicStoreEF.Models;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Core.Repositories;
 
-namespace MusicStoreEF.Repositories
+namespace MusicStoreEF.Persistence.Repositories
 {
     public class LabelRepository : ILabelRepository
     {
@@ -16,7 +18,7 @@ namespace MusicStoreEF.Repositories
         public Label GetById(int labelId)
         {
             return _context.Labels
-                .Include(l => l.Releases.Select(r => r.Artists))
+                .Include(l => Enumerable.Select<Release, ICollection<Artist>>(l.Releases, r => r.Artists))
                 .Include(l => l.Releases.Select(r => r.Genre))
                 .SingleOrDefault(l => l.Id == labelId);
         }

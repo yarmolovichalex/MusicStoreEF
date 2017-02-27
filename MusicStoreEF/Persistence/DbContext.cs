@@ -1,7 +1,8 @@
-using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MusicStoreEF.Core.Models;
 
-namespace MusicStoreEF.Models
+namespace MusicStoreEF.Persistence
 {
     public class DbContext : IdentityDbContext<ApplicationUser>, IDbContext
     {

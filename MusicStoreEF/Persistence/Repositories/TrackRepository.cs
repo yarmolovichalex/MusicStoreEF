@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using MusicStoreEF.Models;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Core.Repositories;
 
-namespace MusicStoreEF.Repositories
+namespace MusicStoreEF.Persistence.Repositories
 {
     public class TrackRepository : ITrackRepository
     {

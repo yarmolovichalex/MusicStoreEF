@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MusicStoreEF.Models;
+using MusicStoreEF.Core.Models;
 
-namespace MusicStoreEF.Repositories
+namespace MusicStoreEF.Core.Repositories
 {
     public interface ITrackRepository
     {

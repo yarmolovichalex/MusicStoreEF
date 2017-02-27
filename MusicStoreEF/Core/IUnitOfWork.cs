@@ -1,4 +1,6 @@
-﻿namespace MusicStoreEF.Repositories
+﻿using MusicStoreEF.Core.Repositories;
+
+namespace MusicStoreEF.Core
 {
     public interface IUnitOfWork
     {

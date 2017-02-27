@@ -1,7 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using MusicStoreEF.Repositories;
+using MusicStoreEF.Persistence.Repositories;
 
 namespace MusicStoreEF.Infrastructure
 {

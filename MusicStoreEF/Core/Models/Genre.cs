@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MusicStoreEF.Models
+namespace MusicStoreEF.Core.Models
 {
     public class Genre
     {

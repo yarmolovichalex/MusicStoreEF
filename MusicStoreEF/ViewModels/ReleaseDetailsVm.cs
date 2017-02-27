@@ -1,6 +1,6 @@
-﻿using MusicStoreEF.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using MusicStoreEF.Core.Models;
 
 namespace MusicStoreEF.ViewModels
 {

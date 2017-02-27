@@ -4,8 +4,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Persistence;
 using Owin;
-using MusicStoreEF.Models;
 
 namespace MusicStoreEF
 {

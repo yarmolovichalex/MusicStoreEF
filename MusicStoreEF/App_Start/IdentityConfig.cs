@@ -10,7 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using MusicStoreEF.Models;
+using MusicStoreEF.Core.Models;
+using DbContext = MusicStoreEF.Persistence.DbContext;
 
 namespace MusicStoreEF
 {
@@ -42,7 +43,7 @@ namespace MusicStoreEF
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<Models.DbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<DbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {

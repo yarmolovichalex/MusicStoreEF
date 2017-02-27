@@ -1,9 +1,9 @@
 ﻿using MusicStoreEF.Helpers;
-using MusicStoreEF.Models;
-using MusicStoreEF.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using MusicStoreEF.Core;
+using MusicStoreEF.Core.Models;
 
 namespace MusicStoreEF.Controllers
 {

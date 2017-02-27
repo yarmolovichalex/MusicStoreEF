@@ -1,8 +1,9 @@
-﻿using MusicStoreEF.Models;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Core.Repositories;
 
-namespace MusicStoreEF.Repositories
+namespace MusicStoreEF.Persistence.Repositories
 {
     public class ArtistRepository : IArtistRepository
     {
@@ -16,7 +17,7 @@ namespace MusicStoreEF.Repositories
         public Artist GetById(int id)
         {
             return _context.Artists
-                .Include(a => a.Releases.Select(r => r.Genre))
+                .Include(a => Enumerable.Select<Release, Genre>(a.Releases, r => r.Genre))
                 .SingleOrDefault(a => a.Id == id);
         }
 
