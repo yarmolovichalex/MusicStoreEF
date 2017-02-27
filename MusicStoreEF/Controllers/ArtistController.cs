@@ -1,24 +1,20 @@
-﻿using MusicStoreEF.Models;
-using System.Data.Entity;
-using System.Linq;
+﻿using MusicStoreEF.Repositories;
 using System.Web.Mvc;
 
 namespace MusicStoreEF.Controllers
 {
     public class ArtistController : Controller
     {
-        private readonly IDbContext _context;
+        private readonly IArtistRepository _artistRepository;
 
-        public ArtistController(IDbContext context)
+        public ArtistController(IArtistRepository artistRepository)
         {
-            _context = context;
+            _artistRepository = artistRepository;
         }
 
         public ActionResult Index(int id)
         {
-            var artist = _context.Artists
-                .Include(a => a.Releases.Select(r => r.Genre))
-                .SingleOrDefault(a => a.Id == id);
+            var artist = _artistRepository.GetArtistWithReleases(id);
 
             if (artist == null)
                 return HttpNotFound();

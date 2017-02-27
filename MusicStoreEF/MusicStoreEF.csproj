@@ -185,6 +185,7 @@
     <Compile Include="Infrastructure\ControllersInstaller.cs" />
     <Compile Include="Infrastructure\DbContextInstaller.cs" />
     <Compile Include="Infrastructure\IocContainer.cs" />
+    <Compile Include="Infrastructure\RepositoriesInstaller.cs" />
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.cs" />
     <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
@@ -225,6 +226,8 @@
     <Compile Include="Models\IDbContext.cs" />
     <Compile Include="Models\Keys.cs" />
     <Compile Include="Models\Label.cs" />
+    <Compile Include="Repositories\ArtistRepository.cs" />
+    <Compile Include="Repositories\IArtistRepository.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\DbContext.cs" />
     <Compile Include="Models\Artist.cs" />
