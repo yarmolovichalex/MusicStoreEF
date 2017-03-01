@@ -188,24 +188,24 @@
     <Compile Include="Infrastructure\RepositoriesInstaller.cs" />
     <Compile Include="Infrastructure\UnitOfWorkInstaller.cs" />
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
-    <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.cs" />
-    <Compile Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701211731269_MakePhotoUrlFieldNotRequired.cs" />
+    <Compile Include="Persistence\Migrations\201701211731269_MakePhotoUrlFieldNotRequired.Designer.cs">
       <DependentUpon>201701211731269_MakePhotoUrlFieldNotRequired.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701261231526_AddGenresTable.cs" />
-    <Compile Include="Migrations\201701261231526_AddGenresTable.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701261231526_AddGenresTable.cs" />
+    <Compile Include="Persistence\Migrations\201701261231526_AddGenresTable.Designer.cs">
       <DependentUpon>201701261231526_AddGenresTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701261249416_ChangeGenreToField.cs" />
-    <Compile Include="Migrations\201701261249416_ChangeGenreToField.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701261249416_ChangeGenreToField.cs" />
+    <Compile Include="Persistence\Migrations\201701261249416_ChangeGenreToField.Designer.cs">
       <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701291124123_AddPriceToRelease.cs" />
-    <Compile Include="Migrations\201701291124123_AddPriceToRelease.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701291124123_AddPriceToRelease.cs" />
+    <Compile Include="Persistence\Migrations\201701291124123_AddPriceToRelease.Designer.cs">
       <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702052029235_AddPriceToTrackTable.cs" />
-    <Compile Include="Migrations\201702052029235_AddPriceToTrackTable.Designer.cs">
+    <Compile Include="Persistence\Migrations\201702052029235_AddPriceToTrackTable.cs" />
+    <Compile Include="Persistence\Migrations\201702052029235_AddPriceToTrackTable.Designer.cs">
       <DependentUpon>201702052029235_AddPriceToTrackTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\Models\Genre.cs" />
@@ -215,19 +215,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DateHelper.cs" />
-    <Compile Include="Migrations\201701211513028_InitialMigration.cs" />
-    <Compile Include="Migrations\201701211513028_InitialMigration.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701211513028_InitialMigration.cs" />
+    <Compile Include="Persistence\Migrations\201701211513028_InitialMigration.Designer.cs">
       <DependentUpon>201701211513028_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201701211548121_InitialMigration2.cs" />
-    <Compile Include="Migrations\201701211548121_InitialMigration2.Designer.cs">
+    <Compile Include="Persistence\Migrations\201701211548121_InitialMigration2.cs" />
+    <Compile Include="Persistence\Migrations\201701211548121_InitialMigration2.Designer.cs">
       <DependentUpon>201701211548121_InitialMigration2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703010930132_AddAudioUrlToTrack.cs" />
-    <Compile Include="Migrations\201703010930132_AddAudioUrlToTrack.Designer.cs">
+    <Compile Include="Persistence\Migrations\201703010930132_AddAudioUrlToTrack.cs" />
+    <Compile Include="Persistence\Migrations\201703010930132_AddAudioUrlToTrack.Designer.cs">
       <DependentUpon>201703010930132_AddAudioUrlToTrack.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\Migrations\Configuration.cs" />
     <Compile Include="Persistence\IDbContext.cs" />
     <Compile Include="Core\Models\Keys.cs" />
     <Compile Include="Core\Models\Label.cs" />
@@ -342,28 +342,28 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201701211513028_InitialMigration.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701211513028_InitialMigration.resx">
       <DependentUpon>201701211513028_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701211548121_InitialMigration2.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701211548121_InitialMigration2.resx">
       <DependentUpon>201701211548121_InitialMigration2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701211731269_MakePhotoUrlFieldNotRequired.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701211731269_MakePhotoUrlFieldNotRequired.resx">
       <DependentUpon>201701211731269_MakePhotoUrlFieldNotRequired.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701261231526_AddGenresTable.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701261231526_AddGenresTable.resx">
       <DependentUpon>201701261231526_AddGenresTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701261249416_ChangeGenreToField.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701261249416_ChangeGenreToField.resx">
       <DependentUpon>201701261249416_ChangeGenreToField.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201701291124123_AddPriceToRelease.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201701291124123_AddPriceToRelease.resx">
       <DependentUpon>201701291124123_AddPriceToRelease.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702052029235_AddPriceToTrackTable.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201702052029235_AddPriceToTrackTable.resx">
       <DependentUpon>201702052029235_AddPriceToTrackTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703010930132_AddAudioUrlToTrack.resx">
+    <EmbeddedResource Include="Persistence\Migrations\201703010930132_AddAudioUrlToTrack.resx">
       <DependentUpon>201703010930132_AddAudioUrlToTrack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
