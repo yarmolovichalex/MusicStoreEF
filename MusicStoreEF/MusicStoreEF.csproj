@@ -223,6 +223,10 @@
     <Compile Include="Migrations\201701211548121_InitialMigration2.Designer.cs">
       <DependentUpon>201701211548121_InitialMigration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703010930132_AddAudioUrlToTrack.cs" />
+    <Compile Include="Migrations\201703010930132_AddAudioUrlToTrack.Designer.cs">
+      <DependentUpon>201703010930132_AddAudioUrlToTrack.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\IDbContext.cs" />
     <Compile Include="Core\Models\Keys.cs" />
@@ -256,6 +260,7 @@
     <Compile Include="ViewModels\ReleaseDetailsVm.cs" />
     <Compile Include="ViewModels\ReleaseVm.cs" />
     <Compile Include="ViewModels\TrackDetailsVm.cs" />
+    <Compile Include="ViewModels\TrackToListenVm.cs" />
     <Compile Include="ViewModels\ViewModelMappers.cs" />
     <Compile Include="ViewModels\TrackVm.cs" />
   </ItemGroup>
@@ -356,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702052029235_AddPriceToTrackTable.resx">
       <DependentUpon>201702052029235_AddPriceToTrackTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703010930132_AddAudioUrlToTrack.resx">
+      <DependentUpon>201703010930132_AddAudioUrlToTrack.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -9,6 +9,7 @@
         public int? BPM { get; set; }
         public string Key { get; set; }
         public decimal Price { get; set; }
+        public string AudioUrl { get; set; }
 
         public Release Release { get; set; }
         public int ReleaseId { get; set; }

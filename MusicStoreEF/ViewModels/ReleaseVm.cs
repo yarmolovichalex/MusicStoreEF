@@ -12,5 +12,6 @@ namespace MusicStoreEF.ViewModels
         public string Genre { get; set; }
         public string CoverUrl { get; set; }
         public decimal Price { get; set; }
+        public IEnumerable<TrackToListenVm> Tracks { get; set; }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using MusicStoreEF.Core.Models;
+using MusicStoreEF.Core.Repositories;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using MusicStoreEF.Core.Models;
-using MusicStoreEF.Core.Repositories;
 
 namespace MusicStoreEF.Persistence.Repositories
 {
@@ -22,6 +22,7 @@ namespace MusicStoreEF.Persistence.Repositories
             return _context.Releases
                 .Include(r => r.Artists)
                 .Include(r => r.Genre)
+                .Include(r => r.Tracks)
                 .OrderByDescending(r => r.ReleaseDate)
                 .Take(LatestReleasesCount)
                 .ToList();
@@ -41,6 +42,7 @@ namespace MusicStoreEF.Persistence.Repositories
         {
             return _context.Releases
                 .Include(r => r.Artists)
+                .Include(r => r.Tracks)
                 .Where(r => r.GenreId == genreId)
                 .ToList();
         }

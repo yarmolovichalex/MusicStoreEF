@@ -1,6 +1,4 @@
-﻿@using System.Globalization
-@using MusicStoreEF.Helpers
-@model IEnumerable<MusicStoreEF.ViewModels.ReleaseVm>
+﻿@model IEnumerable<MusicStoreEF.ViewModels.ReleaseVm>
 
 @{
     ViewBag.Title = "Releases";
@@ -10,26 +8,5 @@
 
 @foreach (var release in Model)
 {
-    <div class="row new-release">
-        <div class="col-md-4 release-cover">
-            <a href="@Url.Action("Details", "Release", new {id = release.Id})">
-                <img src="@release.CoverUrl" class="img-responsive" />
-            </a>
-        </div>
-        <div class="col-md-4">
-            <ul class="list-group">
-                @HtmlHelpers.ListItem("Name", new MvcHtmlString(release.Name))
-                @HtmlHelpers.ListItem("Artists", release.Artists.ToCommaSeparatedLinks(Request.RequestContext))
-                @HtmlHelpers.ListItem("Release date", new MvcHtmlString(release.ReleaseDate.ToShortDateString()))
-                @HtmlHelpers.ListItem("Genre", new MvcHtmlString(release.Genre))
-            </ul>
-            <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-            </button>
-            <button type="button" class="btn btn-default">
-                <span class="price">$@release.Price.ToString(CultureInfo.InvariantCulture)</span>
-            </button>
-        </div>
-        <div class="col-md-4"></div>
-    </div>
+    Html.RenderPartial("_Release", release);
 }

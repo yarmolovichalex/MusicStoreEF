@@ -1,7 +1,7 @@
 ﻿@using System.Globalization
 @using MusicStoreEF.Helpers
 @model MusicStoreEF.ViewModels.ReleaseVm
-    
+
 <div class="row new-release">
     <div class="col-md-4 release-cover">
         <a href="@Url.Action("Details", "Release", new {id = Model.Id})">
@@ -15,9 +15,18 @@
             @HtmlHelpers.ListItem("Release date", new MvcHtmlString(Model.ReleaseDate.ToShortDateString()))
             @HtmlHelpers.ListItem("Genre", new MvcHtmlString(Model.Genre))
         </ul>
-        <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-        </button>
+
+        @{
+            var firstTrack = Model.Tracks.FirstOrDefault();
+            if (firstTrack != null)
+            {
+                <audio src="@firstTrack.AudioUrl"></audio>
+                <button type="button" class="playButton btn btn-default">
+                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+                </button>
+            }
+        }
+
         <button type="button" class="btn btn-default">
             <span class="price">$@Model.Price.ToString(CultureInfo.InvariantCulture)</span>
         </button>

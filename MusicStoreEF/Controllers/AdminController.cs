@@ -1,9 +1,9 @@
-﻿using MusicStoreEF.Helpers;
+﻿using MusicStoreEF.Core;
+using MusicStoreEF.Core.Models;
+using MusicStoreEF.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using MusicStoreEF.Core;
-using MusicStoreEF.Core.Models;
 
 namespace MusicStoreEF.Controllers
 {
@@ -129,7 +129,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 124,
                         Key = Keys.Amin,
                         Genre = techHouse,
-                        Price = 2.97m
+                        Price = 2.97m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8586206.LOFI.mp3"
                     }
                 }
             };
@@ -153,7 +154,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 125,
                         Key = Keys.Bmaj,
                         Genre = techHouse,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8775647.LOFI.mp3"
                     },
                     new Track
                     {
@@ -163,7 +165,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 124,
                         Key = Keys.Fsharpmin,
                         Genre = techHouse,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8775651.LOFI.mp3"
                     },
                     new Track
                     {
@@ -173,7 +176,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 122,
                         Key = Keys.Cmin,
                         Genre = techHouse,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8775653.LOFI.mp3"
                     }
                 }
             };
@@ -197,7 +201,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 122,
                         Key = Keys.Amaj,
                         Genre = techHouse,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8746333.LOFI.mp3"
                     }
                 }
             };
@@ -221,7 +226,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 124,
                         Key = Keys.Bmin,
                         Genre = techno,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8611207.LOFI.mp3"
                     },
                     new Track
                     {
@@ -231,7 +237,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 126,
                         Key = Keys.Amin,
                         Genre = techno,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8611208.LOFI.mp3"
                     },
                     new Track
                     {
@@ -241,7 +248,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 126,
                         Key = Keys.Amaj,
                         Genre = techno,
-                        Price = 1.99m
+                        Price = 1.99m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8611209.LOFI.mp3"
                     }
                 }
             };
@@ -265,7 +273,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 123,
                         Key = Keys.Amin,
                         Genre = techHouse,
-                        Price = 1.49m
+                        Price = 1.49m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8557842.LOFI.mp3"
                     },
                     new Track
                     {
@@ -275,7 +284,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 123,
                         Key = Keys.Emaj,
                         Genre = techno,
-                        Price = 1.49m
+                        Price = 1.49m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8557844.LOFI.mp3"
                     },
                     new Track
                     {
@@ -285,7 +295,8 @@ namespace MusicStoreEF.Controllers
                         BPM = 122,
                         Key = Keys.Gmin,
                         Genre = techHouse,
-                        Price = 1.49m
+                        Price = 1.49m,
+                        AudioUrl = "https://geo-samples.beatport.com/lofi/8557846.LOFI.mp3"
                     }
                 }
             };

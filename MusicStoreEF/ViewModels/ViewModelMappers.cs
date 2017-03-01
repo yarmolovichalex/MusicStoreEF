@@ -1,6 +1,6 @@
+using MusicStoreEF.Core.Models;
 using System.Collections.Generic;
 using System.Linq;
-using MusicStoreEF.Core.Models;
 
 namespace MusicStoreEF.ViewModels
 {
@@ -31,7 +31,12 @@ namespace MusicStoreEF.ViewModels
                 ReleaseDate = release.ReleaseDate,
                 Genre = release.Genre.Name,
                 CoverUrl = release.CoverUrl,
-                Price = release.Price
+                Price = release.Price,
+                Tracks = release.Tracks.Select(t => new TrackToListenVm
+                {
+                    Name = t.Name,
+                    AudioUrl = t.AudioUrl
+                })
             };
         }
 

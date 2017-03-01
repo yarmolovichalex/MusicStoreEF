@@ -61,6 +61,9 @@ namespace MusicStoreEF.Persistence
             modelBuilder.Entity<Track>()
                 .Property(e => e.GenreId).IsRequired();
 
+            modelBuilder.Entity<Track>()
+                .Property(t => t.AudioUrl).HasMaxLength(2000);
+
             modelBuilder.Entity<Genre>()
                 .Property(g => g.Name).IsRequired();
 

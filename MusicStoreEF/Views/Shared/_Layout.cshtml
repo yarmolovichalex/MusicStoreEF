@@ -43,5 +43,27 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
+    <script>
+        $(document).ready(function () {
+            $('.playButton').on('click',
+            function () {
+    
+                let icon = $(this).find('span');
+                let currentTrack = $(this).prev();
+    
+                if (icon.hasClass('glyphicon-play')) {
+                    $('audio').trigger('pause');
+                    $('.playButton .glyphicon-pause').removeClass('glyphicon-pause').addClass('glyphicon-play');
+    
+                    currentTrack.trigger('play');
+                    icon.removeClass('glyphicon-play').addClass('glyphicon-pause');
+                } else {
+                    currentTrack.trigger('pause');
+                    icon.removeClass('glyphicon-pause').addClass('glyphicon-play');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
