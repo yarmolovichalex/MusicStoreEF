@@ -1,6 +1,7 @@
-using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using MusicStoreEF.Core.Models;
+using MusicStoreEF.Migrations;
+using System.Data.Entity;
 
 namespace MusicStoreEF.Persistence
 {
@@ -15,6 +16,7 @@ namespace MusicStoreEF.Persistence
         public DbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DbContext, Configuration>());
         }
 
         public static DbContext Create()
