@@ -1,0 +1,6 @@
+﻿@model MusicStoreEF.ViewModels.PlayButtonVm
+
+<audio src="@Model.AudioUrl"></audio>
+<button type="button" class="playButton btn btn-default @(string.IsNullOrEmpty(Model.ButtonClass) ? "" : Model.ButtonClass)">
+    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+</button>

@@ -1,5 +1,6 @@
 ﻿@using MusicStoreEF.Helpers
-@model MusicStoreEF.ViewModels.ReleaseDetailsVm
+@using MusicStoreEF.ViewModels
+@model ReleaseDetailsVm
 
 @{
     ViewBag.Title = $"{string.Join(", ", Model.Artists.Select(a => a.Name))} - {Model.Name}";
@@ -26,6 +27,7 @@
             <thead>
                 <tr>
                     <th></th>
+                    <th></th>
                     <th>Title</th>
                     <th>Artists</th>
                     <th>Genre</th>
@@ -42,6 +44,16 @@
                             <div class="trackNumber">
                                 @track.Number
                             </div>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(track.AudioUrl))
+                            {
+                                @Html.Partial("_PlayButton", new PlayButtonVm
+                                {
+                                    AudioUrl = track.AudioUrl,
+                                    ButtonClass = "btn-sm"
+                                })
+                            }
                         </td>
                         <td>@track.Name</td>
                         <td>@Model.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>

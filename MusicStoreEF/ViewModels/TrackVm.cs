@@ -8,5 +8,6 @@
         public int? BPM { get; set; }
         public string Key { get; set; }
         public int Length { get; set; }
+        public string AudioUrl { get; set; }
     }
 }

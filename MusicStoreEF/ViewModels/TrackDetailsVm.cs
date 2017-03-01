@@ -14,5 +14,6 @@ namespace MusicStoreEF.ViewModels
         public string Key { get; set; }
         public DateTime ReleaseDate { get; set; }
         public decimal Price { get; set; }
+        public string AudioUrl { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
 @using MusicStoreEF.Helpers
-@model IEnumerable<MusicStoreEF.ViewModels.TrackDetailsVm>
+@using MusicStoreEF.ViewModels
+@model IEnumerable<TrackDetailsVm>
 
 @{
     ViewBag.Title = "Tracks";
@@ -12,6 +13,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th></th>
                 <th></th>
                 <th>Title</th>
                 <th>Artists</th>
@@ -30,6 +32,16 @@
                         <a href="@Url.Action("Details", "Release", new { id = track.ReleaseId })">
                             <img src="@track.ReleaseCoverUrl" class="release-cover-tiny" />
                         </a>
+                    </td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(track.AudioUrl))
+                        {
+                            @Html.Partial("_PlayButton", new PlayButtonVm
+                            {
+                                AudioUrl = track.AudioUrl,
+                                ButtonClass = "btn-sm"
+                            })
+                        }
                     </td>
                     <td>@track.Name</td>
                     <td>@track.Artists.ToCommaSeparatedLinks(Request.RequestContext)</td>

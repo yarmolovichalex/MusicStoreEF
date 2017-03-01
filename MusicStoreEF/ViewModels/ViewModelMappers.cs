@@ -58,7 +58,8 @@ namespace MusicStoreEF.ViewModels
                 Genre = track.Genre.Name,
                 BPM = track.BPM,
                 Key = track.Key,
-                Length = track.Length
+                Length = track.Length,
+                AudioUrl = track.AudioUrl
             };
         }
     }

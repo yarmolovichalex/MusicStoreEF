@@ -1,5 +1,6 @@
 ﻿@using System.Globalization
 @using MusicStoreEF.Helpers
+@using MusicStoreEF.ViewModels
 @model MusicStoreEF.ViewModels.ReleaseVm
 
 <div class="row new-release">
@@ -20,10 +21,10 @@
             var firstTrack = Model.Tracks.FirstOrDefault();
             if (firstTrack != null)
             {
-                <audio src="@firstTrack.AudioUrl"></audio>
-                <button type="button" class="playButton btn btn-default">
-                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                </button>
+                @Html.Partial("_PlayButton", new PlayButtonVm
+                {
+                    AudioUrl = firstTrack.AudioUrl
+                })
             }
         }
 

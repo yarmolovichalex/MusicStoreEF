@@ -1,7 +1,7 @@
-﻿using MusicStoreEF.ViewModels;
+﻿using MusicStoreEF.Core;
+using MusicStoreEF.ViewModels;
 using System.Linq;
 using System.Web.Mvc;
-using MusicStoreEF.Core;
 
 namespace MusicStoreEF.Controllers
 {
@@ -32,7 +32,8 @@ namespace MusicStoreEF.Controllers
                 },
                 Genre = t.Genre.Name,
                 Key = t.Key,
-                Price = t.Price
+                Price = t.Price,
+                AudioUrl = t.AudioUrl
             });
 
             return View(viewModel);
